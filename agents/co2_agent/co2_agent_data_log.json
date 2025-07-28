@@ -10,5 +10,17 @@
     "location": "Zone B",
     "data_name": "co2_level",
     "agent_name": "co2_agent"
+  },
+  {
+    "uuid": "6ec7deba-826a-4047-b547-85b7eeaf6e6c",
+    "timestamp": "2025-07-28T10:32:45.859910",
+    "co2_level": 574,
+    "co2_status": "High",
+    "sensor_type": "CO2 Sensor",
+    "frequency": "Every 10 seconds",
+    "unit": "ppm",
+    "location": "Zone B",
+    "data_name": "co2_level",
+    "agent_name": "co2_agent"
   }
 ]

@@ -61,7 +61,7 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      - ./data/agents/traffic_agent:/agents/traffic_agent
+      - ./agents/traffic_agent:/app/agents/traffic_agent 
     networks:
       - appnet
     depends_on:
@@ -99,7 +99,7 @@ services:
     ports:
       - "5002:5002"
     volumes:
-      - ./data/agents/noise_agent:/agents/noise_agent
+      - ./agents/noise_agent:/app/agents/noise_agent 
     networks:
       - appnet
     depends_on:
@@ -118,7 +118,7 @@ services:
     ports:
       - "5003:5003"
     volumes:
-      - ./data/agents/humidity_agent:/agents/humidity_agent
+      - ./agents/humidity_agent:/app/agents/humidity_agent 
     networks:
       - appnet
     depends_on:
@@ -137,7 +137,7 @@ services:
     ports:
       - "5004:5004"
     volumes:
-      - ./data/agents/temperature_agent:/agents/temperature_agent
+      - ./agents/temperature_agent:/app/agents/temperature_agent 
     networks:
       - appnet
     depends_on:

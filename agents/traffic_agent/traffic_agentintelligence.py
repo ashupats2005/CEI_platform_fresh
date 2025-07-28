@@ -1,7 +1,33 @@
 import os
 import json
 from datetime import datetime, timedelta
+import random
 from . import traffic_statistics as stats
+
+
+def append_synthetic_data(data_log_path):
+    os.makedirs(os.path.dirname(data_log_path), exist_ok=True)
+
+    new_entry = {
+        "timestamp": datetime.utcnow().isoformat(),
+        "vehicle_count": random.randint(0, 200),
+        "congestion_status": random.choice(["Free Flow", "Moderate", "Heavy"])
+    }
+
+    if os.path.exists(data_log_path):
+        with open(data_log_path, "r") as f:
+            try:
+                records = json.load(f)
+                if not isinstance(records, list):
+                    records = []
+            except json.JSONDecodeError:
+                records = []
+    else:
+        records = []
+
+    records.append(new_entry)
+    with open(data_log_path, "w") as f:
+        json.dump(records[-200:], f, indent=2)  # retain last 200 records
 
 def generate_and_save_intelligence(data_log_path, agent_name, port, url=None, status="Healthy"):
     def blank_result(agent_id, now):
@@ -79,7 +105,13 @@ def generate_and_save_intelligence(data_log_path, agent_name, port, url=None, st
 get_intelligence_data = generate_and_save_intelligence
 
 # Optional standalone test
+
+
+    
 if __name__ == "__main__":
+    path = "/app/agents/traffic_agent/traffic_agent_data_log.json"
+    append_synthetic_data(path)
+
     print(json.dumps(generate_and_save_intelligence(
         data_log_path="agents/traffic_agent/traffic_agent_data_log.json",
         agent_name="traffic_agent",

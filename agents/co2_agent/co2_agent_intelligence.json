@@ -1,12 +1,12 @@
 {
   "agent_id": "6ec7deba-826a-4047-b547-85b7eeaf6e6c",
   "name": "co2_agent",
-  "value": "Moderate",
+  "value": "NA",
   "unit": "ppm",
-  "average_co2_level": 469.0,
-  "max_co2_level": 469,
-  "min_co2_level": 469,
-  "last_updated": "2025-07-28T09:31:15.177603",
+  "average_co2_level": "NA",
+  "max_co2_level": "NA",
+  "min_co2_level": "NA",
+  "last_updated": "2025-07-28T12:31:40.306655",
   "url": 5001,
-  "status": "Healthy"
+  "status": "NA"
 }
