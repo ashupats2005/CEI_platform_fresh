@@ -4,9 +4,6 @@ Platform for Cluetered Edge Intelligence with discoverability and obserability c
 ## Overall Sy.
 ![Overall Sy](./doc/overall_systems.jpg)
 
-### Registration process
-![registration process](./doc/agentstraffic.drawio.pdf)
-
 ### System architecture
 
 Intelligent Agent System with Web Dashboard:-
